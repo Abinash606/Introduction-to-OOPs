@@ -1,0 +1,142 @@
+import java.util.Scanner;
+//        Q1. Create a class named 'Student' with String variable 'name' and integer variable 'roll_no'. Assign
+//        the value of roll_no as '2' and that of name as "John" by creating an object of the class Student.
+class Student{
+    String name ;
+    int roll_no ;
+}
+//    Q2. Write a program to print the area and perimeter of a triangle having sides of 3, 4 and 5 units by
+//        creating a class named 'Triangle' without any parameter in its constructor.
+class Triangle{
+    int a,b,c;
+    public double getArea(){
+        double s = (a+b+c)/2.0;
+        return Math.pow((s*(s-a)*(s-b)*(s-c)),.5);
+    }
+    public double getPerimeter(){
+        return (a+b+c)/2.0;
+    }
+}
+//    Q3. Write a program to print the area of a rectangle by creating a class named 'Area' taking the values
+//        of its length and breadth as parameters of its constructor and having a method named 'returnArea'
+//        which returns the area of the rectangle. Length and breadth of rectangle are entered through keyboard.
+class Area3{
+    int length;
+    int breadth;
+    public Area3(int l,int b){
+        length = l;
+        breadth = b;
+    }
+    public int getArea(){
+        return length*breadth;
+    }
+}
+//    Q4. Print the sum, difference and product of two complex numbers by creating a class named
+//'Complex' with separate methods for each operation whose real and imaginary parts are
+//        entered by user.
+class Complex{
+    int real;
+    int imagn;
+    public Complex(int r,int i){
+        real = r;
+        imagn = i;
+    }
+    public static Complex add(Complex a,Complex b){
+        return new Complex((a.real+b.real),(a.imagn+b.imagn));
+    }
+    public static Complex diff(Complex a,Complex b){
+        return new Complex((a.real - b.real), (a.imagn-b.imagn));
+    }
+    public static Complex product(Complex a,Complex b){
+        return new Complex((a.real*b.real)-(a.imagn*b.imagn),((a.real*b.imagn)+(a.imagn*b.real)));
+    }
+    public void printComplex(){
+        if (real == 0 && imagn != 0){
+            System.out.println(imagn + "i");
+        }
+        else if (imagn == 0 && real != 0){
+            System.out.println(real);
+        }
+        else {
+            System.out.println(real + "+" + imagn+"i");
+        }
+    }
+}
+//Q5. Write a program that would print the information (name, year of joining, salary, address) of three
+//    employees by creating a class named 'Employee'. The output should be as follows:
+    class Employee1{
+    String name;
+    int yoj;
+    int salary;
+    String address;
+
+}
+public class IntroOOPS {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Student obj = new Student();
+        obj.name= "John";
+        obj.roll_no = 2;
+        System.out.println(obj.name);
+        System.out.println(obj.roll_no);
+
+//        @2
+        /*
+        Triangle t = new Triangle();
+        t.a = 3;
+        t.b = 4;
+        t.c = 5;
+        System.out.println(t.getArea());
+        System.out.println(t.getPerimeter());
+
+         */
+//      @3
+        /*
+        int l,b;
+        System.out.println("Enter Length: ");
+        l = sc.nextInt();
+        System.out.println("Enter Breadth :");
+        b = sc.nextInt();
+        Area3 a = new Area3(l,b);
+        System.out.println("Area : " + a.getArea());
+
+         */
+//      @4
+        /*
+        System.out.println("Enter real part of Complex Number 1: ");
+        int real1 = sc.nextInt();
+        System.out.println("Enter Complex part of complex number 1 without iota sign :");
+        int comp1 = sc.nextInt();
+        System.out.println("Enter The Real part of complex number 2: ");
+        int real2 = sc.nextInt();
+        System.out.println("Enter Complex part of complex Number 2 without iota sign :");
+        int comp2 = sc.nextInt();
+        Complex c = new Complex(real1,comp1);
+        Complex d = new Complex(real2,comp2);
+        Complex e = Complex.add(c,d);
+        Complex f = Complex.diff(c,d);
+        Complex g = Complex.product(c,d);
+        e.printComplex();
+        f.printComplex();
+        g.printComplex();
+
+         */
+//        @5
+        Employee1 a1 = new Employee1();
+        a1.name = "Robert";
+        a1.yoj = 1994;
+        a1.address = "64C-WallsStreet";
+        Employee1 b1 = new Employee1();
+        b1.name = "Sam";
+        b1.yoj = 2000;
+        b1.address = "64D-WallsStreet";
+        Employee1 c1 = new Employee1();
+        c1.name = "John";
+        c1.yoj = 1999;
+        c1.address = "26D-WallsStreet";
+        System.out.println("Name" + "\t" + "Year of joining" + "\t" + "Address");
+        System.out.println(a1.name + "\t" + a1.yoj + "\t" + a1.address);
+        System.out.println(b1.name + "\t" + b1.yoj + "\t" + b1.address);
+        System.out.println(c1.name + "\t"+c1.yoj + "\t" + c1.address);
+    }
+}
